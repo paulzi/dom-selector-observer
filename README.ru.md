@@ -7,7 +7,7 @@
 
 Слежение за вставкой, перемещением и удалением элементов из DOM.
 
-[Russian readme](https://github.com/paulzi/dom-selector-observer/blob/master/README.ru.md)
+[English readme](https://github.com/paulzi/context-selector/)
 
 ## Установка
 
