@@ -1,0 +1,49 @@
+{
+  "name": "dom-selector-observer",
+  "version": "0.1.0",
+  "description": "Observation the attach, move and detach of elements in DOM",
+  "main": "with-shims.js",
+  "authors": [
+    {
+      "name": "PaulZi",
+      "email": "pavel.zimakoff@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulzi/dom-selector-observer"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-loader": "^8.0.6",
+    "chai": "^4.2.0",
+    "core-js": "^3.1.4",
+    "eslint": "^5.16.0",
+    "eslint-loader": "^2.1.2",
+    "karma": "^4.1.0",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-mocha": "^1.3.0",
+    "karma-webpack": "^3.0.5",
+    "mocha": "^6.1.4",
+    "uglifyjs-webpack-plugin": "^2.1.3",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-merge": "^4.2.1"
+  },
+  "browserslist": [
+    "defaults",
+    "ie >= 11"
+  ],
+  "scripts": {
+    "build:dev": "webpack --config webpack/dev.config.js",
+    "build:prod": "webpack --config webpack/prod.config.js",
+    "test": "eslint src/index.js && karma start"
+  },
+  "dependencies": {
+    "polyshim": "^0.1.3"
+  }
+}
