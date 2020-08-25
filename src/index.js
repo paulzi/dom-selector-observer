@@ -199,16 +199,16 @@ export default {
         if (observer) {
             throw new Error('dom-selector-observer already watch');
         }
-        if (processExisting) {
-            let state = new Map();
-            processMutation(state, document.documentElement);
-            processState(state);
-        }
         observer = new MutationObserver(processMutations);
         observer.observe(document, {
             childList: true,
             subtree: true,
         });
+        if (processExisting) {
+            let state = new Map();
+            processMutation(state, document.documentElement);
+            processState(state);
+        }
         return observer;
     },
 
