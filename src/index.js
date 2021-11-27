@@ -106,11 +106,18 @@ function markNodeState(state, node, selector) {
  */
 function processState(state) {
     const KEY = '_dom-selector-observer';
+    let domState = new Map();
     state.forEach((nodes, selector) => {
         nodes.forEach((isTrue, node) => {
-            let oldState = node[KEY];
-            let newState = document.documentElement.contains(node);
-            node[KEY] = newState;
+            let oldState, newState;
+            if (domState.has(node)) {
+                [oldState, newState] = domState.get(node);
+            } else {
+                oldState = node[KEY];
+                newState = document.documentElement.contains(node);
+                node[KEY] = newState;
+                domState.set(node, [oldState, newState]);
+            }
             let target;
             if (newState) {
                 target = oldState ? moveHandlers : attachHandlers;
